@@ -617,7 +617,7 @@ def create_pdf(
 
     elements.append(Paragraph("<b>Project Files:</b>", info_style))
     for f in files_to_include:
-        elements.append(Paragraph(f"&nbsp;&nbsp;ΓÇó {os.path.basename(f)}", info_style))
+        elements.append(Paragraph(f"&nbsp;&nbsp;- {os.path.basename(f)}", info_style))
 
     elements.append(Spacer(1, 0.3 * inch))
 
@@ -674,7 +674,7 @@ def create_pdf(
         doc.build(
             elements, onFirstPage=add_page_background, onLaterPages=add_page_background
         )
-        print(f"\nΓ£ô PDF created successfully: {output_pdf}")
+        print(f"\nPDF created successfully: {output_pdf}")
         return True
     except Exception as e:
         print(f"Error creating PDF: {e}")
@@ -690,13 +690,13 @@ def main():
     if len(sys.argv) < 2:
         print("C++ Code to PDF Converter with Themed Syntax Highlighting")
         print("=" * 65)
-        print("\nUsage: python code_to_pdf.py <code_file> [options]")
+        print("\nUsage:  cppdf <code_file> [options]")
         print("\nOptions:")
         print("  -o, --output <file>       Output PDF filename")
         print("  -n, --name <name>         Student name")
         print("  -t, --title <title>       Assignment title")
         print("  -c, --course <course>     Course name/number")
-        print("  --theme <theme>           Color theme (default: catppuccin-latte)")
+        print("  --theme <theme>           Color theme (default: kanagawa-wave)")
         print(
             "                            Options: catppuccin-mocha, catppuccin-latte,"
         )
@@ -705,7 +705,7 @@ def main():
         )
         print("  --no-project              Only convert the specified file")
         print("\nExample:")
-        print("  python code_to_pdf.py main.cpp -n 'John Doe' -t 'Assignment 1' \\")
+        print("  cppdf main.cpp -n 'John Doe' -t 'Assignment 1' \\")
         print("         -c 'CS101' --theme kanagawa-wave")
         print("\nBy default, finds and includes all .cpp, .h, .hpp files")
         print("in the same directory and subdirectories.")
