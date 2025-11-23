@@ -17,9 +17,8 @@ from reportlab.lib.units import inch
 from reportlab.platypus import PageBreak, Paragraph, SimpleDocTemplate, Spacer
 from reportlab.platypus.flowables import Flowable
 
-# =============================
+
 # Theme Palette Definitions
-# =============================
 
 THEMES = {
     "catppuccin-mocha": {
@@ -386,7 +385,7 @@ class SyntaxHighlightedCode(Flowable):
         """Tokenize and highlight C++ code"""
         theme = THEMES[SELECTED_THEME]
 
-        # Enhanced tokenizer for C++
+        # tokenizer for C++
         token_pattern = r'"[^"\\]*(?:\\.[^"\\]*)*"|\'[^\'\\]*(?:\\.[^\'\\]*)*\'|0x[0-9a-fA-F]+|[0-9]+\.?[0-9]*[fFlLuU]*|[A-Za-z_]\w*|::|->|\+\+|--|<<|>>|<=|>=|==|!=|&&|\|\||[+\-*/%=<>!&|^~?:]|\(|\)|\[|\]|\{|\}|;|,|\.|#|\s+'
         tokens = re.findall(token_pattern, line)
 
@@ -688,7 +687,7 @@ def main():
     """Main function to handle command line arguments"""
 
     if len(sys.argv) < 2:
-        print("C++ Code to PDF Converter with Themed Syntax Highlighting")
+        print("C++ Code projects to PDF Converter")
         print("=" * 65)
         print("\nUsage:  cppdf <code_file> [options]")
         print("\nOptions:")
