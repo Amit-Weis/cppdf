@@ -1,0 +1,10 @@
+pyproject.toml
+setup.cfg
+cppdf/__init__.py
+cppdf/cli.py
+cppdf.egg-info/PKG-INFO
+cppdf.egg-info/SOURCES.txt
+cppdf.egg-info/dependency_links.txt
+cppdf.egg-info/entry_points.txt
+cppdf.egg-info/requires.txt
+cppdf.egg-info/top_level.txt
