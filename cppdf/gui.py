@@ -121,7 +121,7 @@ class CppdfGUI(QWidget):
 
         self.setLayout(layout)
 
-    # ========== File pickers ==========
+    # File pickers
     def browse_file(self):
         path, _ = QFileDialog.getOpenFileName(
             self, "Select C++ File", "", "*.cpp *.h *.hpp *.c"
@@ -138,8 +138,7 @@ class CppdfGUI(QWidget):
             self.output_folder = folder
             self.folder_label.setText(f"Folder: {folder}")
 
-    # Run create_pdf()
-
+    # Runners
     def run_cppdf(self):
         code_file = self.file_input.text().strip()
         if not code_file:
@@ -170,7 +169,6 @@ class CppdfGUI(QWidget):
         self.worker.start()
 
     # When finished
-
     def finish(self, success, message):
         if success:
             self.console.append(f"SUCCESS: {message}\n")
@@ -197,7 +195,6 @@ class CppdfGUI(QWidget):
 
 
 # Entry point
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = CppdfGUI()

@@ -17,10 +17,6 @@ from reportlab.lib.units import inch
 from reportlab.platypus import PageBreak, Paragraph, SimpleDocTemplate, Spacer
 from reportlab.platypus.flowables import Flowable
 
-# =============================
-# Theme Palette Definitions
-# =============================
-
 THEMES = {
     "catppuccin-mocha": {
         "bg": "#1e1e2e",
